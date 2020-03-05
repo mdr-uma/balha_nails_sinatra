@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20200304023702) do
   create_table "services", force: :cascade do |t|
     t.string  "service_name"
     t.date    "date"
-    t.string  "duration"
     t.integer "client_id"
   end
 
