@@ -6,6 +6,6 @@ end
 
 
 use Rack::MethodOverride
-use ClientController
-use ServiceController
+use ServicesController
+use ClientsController
 run ApplicationController
