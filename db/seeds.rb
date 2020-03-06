@@ -1,0 +1,8 @@
+Service.create(service_name: "Classic Manicure")
+Service.create(service_name: "Spa Manicure")
+Service.create(service_name: "Classic Pdicure")
+Service.create(service_name: "Spa Pedicure")
+Service.create(service_name: "Gel Manicure")
+Service.create(service_name: "Gel Pedicure")
+Service.create(service_name: "Mini Manicure")
+Service.create(service_name: "Mini Pedicure")
