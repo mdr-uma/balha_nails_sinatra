@@ -53,5 +53,14 @@ class AppointmentsController < ApplicationController
             end 
     end
     
+    delete '/appointments/:id' do
+        @appointment = current_client.appointments.find_by(id: params[:id])
+        if @appointment && @appointment.destroy
+            redirect "/appointments"
+        else
+            redirect "/appointments/#{params[:id]}"
+    end
+
+    end
 
 end
