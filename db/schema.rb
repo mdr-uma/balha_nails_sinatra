@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20200304023702) do
 
+  create_table "appointments", force: :cascade do |t|
+    t.string  "service_name"
+    t.date    "date"
+    t.integer "client_id"
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string  "name"
     t.integer "phone_num"
     t.string  "email"
     t.string  "password_digest"
-  end
-
-  create_table "services", force: :cascade do |t|
-    t.string  "service_name"
-    t.date    "date"
-    t.integer "client_id"
   end
 
 end
