@@ -17,7 +17,6 @@ class AppointmentsController < ApplicationController
     end
 
     post '/appointments' do
-        # binding.pry
         client = current_client
         if params[:service_name].empty?
             redirect '/appointments/new' 

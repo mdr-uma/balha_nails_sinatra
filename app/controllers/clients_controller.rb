@@ -40,9 +40,9 @@ class ClientsController < ApplicationController
     get '/logout' do
         if logged_in?
         session.clear
-        redirect '/login'
-        else !logged_in?
         redirect '/'
+        else !logged_in?
+        redirect '/login'
         end
   end
 
