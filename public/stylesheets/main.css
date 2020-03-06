@@ -16,14 +16,22 @@ body {
 
 /* --- Welcome Page Styles --- */
 
+
+/* header img {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+} */
+
 body {
-    background-color: rgb(176, 204, 247);
+    background-color: rgb(252, 252, 252);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
 }
 
-.wrapper {
+
+/* .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
@@ -32,8 +40,12 @@ body {
     max-width: 960px;
     padding: 2.25%;
     /* 18px / 800px */
-    width: 85%;
-}
+
+
+/* width: 85%; */
+
+
+/* } */
 
 h1 {
     font-size: 36px;
@@ -66,19 +78,27 @@ p {
     /* 480px / 800px */
 }
 
-.sidebar {
+
+/* .sidebar {
     background: #eee;
     border: 1px solid #ccc;
     float: right;
     padding: 2.08333333333%;
     /* 5px / 240px */
-    width: 30%;
-    /* 240px / 800px */
-}
 
-.sidebar ul {
+
+/* width: 30%; */
+
+
+/* 240px / 800px */
+
+
+/* } */
+
+
+/* .sidebar ul {
     font-size: 14px;
-}
+} */
 
 .branding {
     clear: both;

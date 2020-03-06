@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
         if params[:service_name].empty?
             redirect '/appointments/new' 
         end  
-        @appointments = Appointment.create(service_name: params[:service_name], :client_id => client.id)
+        @appointments = Appointment.create(service_name: params[:service_name], date: params[:date], :client_id => client.id)
         redirect '/appointments'
     end
     
