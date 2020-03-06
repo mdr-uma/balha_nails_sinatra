@@ -9,4 +9,12 @@ class ServicesController < ApplicationController
           end
     end
 
+    get '/services/new' do
+        if !logged_in?
+            redirect '/login'
+        end
+        erb :'services/new'
+
+    end
+
 end
