@@ -18,6 +18,13 @@ class ClientsController < ApplicationController
         end
     end
 
+    get '/login' do
+        if logged_in?
+            redirect '/services'
+        else
+        erb :'/clients/login'
+        end
+  end
 
 
 end

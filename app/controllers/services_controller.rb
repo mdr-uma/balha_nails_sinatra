@@ -19,9 +19,9 @@ class ServicesController < ApplicationController
     post '/services' do
         # binding.pry
         client = current_client
-        if params[:service_name].empty?
-            redirect '/services/new' 
-        end  
+        # if params[:service_name].empty?
+        #     redirect '/services/new' 
+        # end  
         @service = Service.create(service_name: params[:service_name], :client_id => client.id)
         redirect '/services'
     end
