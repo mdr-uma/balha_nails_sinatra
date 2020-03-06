@@ -18,9 +18,9 @@ class AppointmentsController < ApplicationController
 
     post '/appointments' do
         client = current_client
-        if params[:service_name].empty?
-            redirect '/appointments/new' 
-        end  
+        # if params[:service_name] == nil
+        #     redirect '/appointments/new' 
+        # end  
         @appointments = Appointment.create(service_name: params[:service_name], date: params[:date], :client_id => client.id)
         redirect '/appointments'
     end
@@ -43,13 +43,13 @@ class AppointmentsController < ApplicationController
 
     patch '/appointments/:id' do
          appointment = Appointment.find_by(id: params[:id])
-            if !params[:service_name].empty?
+            # if !params[:service_name].empty?
                 appointment.update(service_name: params[:service_name])
 
-                redirect "/appointments/#{params[:id]}"
-            else        
+                # redirect "/appointments/#{params[:id]}"
+            # else        
                 redirect "/appointments/#{params[:id]}/edit"  
-            end 
+            # end 
     end
     
     delete '/appointments/:id' do

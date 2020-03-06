@@ -1,18 +1,19 @@
 <form action='/appointments' method="post">
 
-    <label for="appointments"><b>Appointments:</b></label>
-    <input type="text" name="service_name" id="service_name">
+    <label for="appointment"><b>New Appointment:</b></label>
+    <%# <input type="text" name="service_name" id="service_name" maxlength="12"> %>
 
-    <%# <select id="appointments">
-    <option value="classic_mani">Classic Manicure</option>
-    <option value="spa_mani">Spa Manicure</option>
-    <option value="classic_pedi">Classic Pedicure</option>
-    <option value="spa_pedi">Spa Pedicure</option>
-    <option value="gel_mani">Gel Manicure</option>
-    <option value="gel_pedi">Gel Pedicure</option>
-    <option value="mini_mani">Mini Manicure</option>
-    <option value="mini_pedi">Mini Pedicure</option>
-    </select> %>
+    <select id="service_name" name="service_name" required>
+    <option value="">Select A Service</option>
+    <option value="Classic Manicure">Classic Manicure</option>
+    <option value="Spa Manicure">Spa Manicure</option>
+    <option value="Classic Pedicure">Classic Pedicure</option>
+    <option value="Spa Pedicure">Spa Pedicure</option>
+    <option value="Gel Manicure">Gel Manicure</option>
+    <option value="Gel Pedicure">Gel Pedicure</option>
+    <option value="Mini Manicure">Mini Manicure</option>
+    <option value="Mini Pedicure">Mini Pedicure</option>
+    </select>
     
     <label for="date"><b>Date:</b></label>
     <input type="date" name="date" id="date" required>
