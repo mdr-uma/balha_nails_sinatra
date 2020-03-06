@@ -1,0 +1,8 @@
+<h2>Welcome, <%= @client.name %> to Balha Nails </h2>
+<%# <p>Please select the service you would like to book:</p> %>
+<% @services.each do |service|%>
+  <%= service.service_name %></a>
+<%end%>
+<a href="/service/new"><button>New Appointment</button></a>
+
+<%# <p><a href="/logout"><button>Log Out</button></a></p> %>
