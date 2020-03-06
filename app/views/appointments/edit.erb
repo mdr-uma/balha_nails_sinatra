@@ -1,6 +1,8 @@
 <form method="POST" action="/appointments/<%= @appointment.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <label>Appointment:</label><br>
-  <input type="text" name="service_name" id="service_name" value="<%= @appointment.service_name %>"><br><br>
+  <label>Appointment:</label>
+  <input type="text" name="service_name" id="service_name" value="<%= @appointment.service_name %>">
+  <label>Date:</label>
+  <input type="date" name="date" id="date" value="<%= @appointment.date%>"><br><br>
   <input type="submit" value="submit">
 </form>

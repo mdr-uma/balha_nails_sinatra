@@ -41,6 +41,17 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.find_by(id: params[:id])
         erb :"/appointments/edit"
     end
+
+    patch '/appointments/:id' do
+         appointment = Appointment.find_by(id: params[:id])
+            if !params[:service_name].empty?
+                appointment.update(service_name: params[:service_name])
+
+                redirect "/appointments/#{params[:id]}"
+            else        
+                redirect "/appointments/#{params[:id]}/edit"  
+            end 
+    end
     
 
 end
