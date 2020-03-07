@@ -46,9 +46,9 @@ class AppointmentsController < ApplicationController
             # if !params[:service_name].empty?
                 appointment.update(service_name: params[:service_name])
 
-                # redirect "/appointments/#{params[:id]}"
+                 redirect "/appointments"
             # else        
-                redirect "/appointments/#{params[:id]}/edit"  
+                # redirect "/appointments/#{params[:id]}/edit"  
             # end 
     end
     
