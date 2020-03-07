@@ -1,7 +1,7 @@
-<h1><%= @client.name %>'s Appointments:</h1>
+<h1><%=@client.name%>'s Appointments:</h1>
 <% @client.appointments.each do |appointment| %>
 <ul>
-  <li><a href="/appointments/<%=appointment.id%>"><%= appointment.service_name %></a><%=appointment.date%></li>
+  <li><a href="/appointments/<%=appointment.id%>"><%= appointment.service_name %></a>: <%=appointment.date%></li>
 </ul>
 <% end %>
 <a href="/appointments/new"><button><b>New Appointment</b></button></a>
