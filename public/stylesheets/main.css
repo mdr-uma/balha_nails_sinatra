@@ -138,3 +138,7 @@ h5 {
     text-align: center;
     background-color: rgb(245, 166, 221);
 }
+.image2 {
+    display: block;
+    float: right;
+}
