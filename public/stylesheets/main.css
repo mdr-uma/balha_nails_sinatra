@@ -142,3 +142,6 @@ h5 {
     display: block;
     float: right;
 }
+label {
+    background-color: lemonchiffon;
+}
