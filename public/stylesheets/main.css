@@ -39,6 +39,7 @@ body {
     position: absolute;
     top: 8px;
     right: 16px;
+    background-color: lightgreen;
 }
 
 h1 {
