@@ -144,4 +144,13 @@ h5 {
 }
 label {
     background-color: lemonchiffon;
+    font-weight: bold;
+}
+button {
+    background-color: lightgreen;
+    font-size: small;
+}
+input {
+    background-color: rgb(196, 228, 248);
+    font-size: small;
 }
