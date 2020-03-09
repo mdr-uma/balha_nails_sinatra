@@ -3,7 +3,7 @@
 <% @appointments.each do |appointment|%>
 <ul>
   <li>
-  <p><%= appointment.service_name %></p>
+  <p><%= appointment.service_name %> on <%=appointment.date%></p>
   </li>
 </ul>
 <%end%>

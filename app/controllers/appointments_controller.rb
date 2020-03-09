@@ -38,15 +38,18 @@ class AppointmentsController < ApplicationController
             redirect '/login'
         end
         @appointment = Appointment.find_by(id: params[:id])
-        erb :"/appointments/edit"
+            if @appointment.client_id == current_client.id
+            erb :"/appointments/edit"
+            else
+                redirect '/appointments'
+            end
     end
 
     patch '/appointments/:id' do
          appointment = Appointment.find_by(id: params[:id])
             # if !params[:service_name].empty?
-                appointment.update(service_name: params[:service_name])
-
-                 redirect "/appointments"
+         appointment.update(service_name: params[:service_name], date: params[:date])
+         redirect "/appointments"
             # else        
                 # redirect "/appointments/#{params[:id]}/edit"  
             # end 
