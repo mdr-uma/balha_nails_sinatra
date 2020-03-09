@@ -37,15 +37,19 @@ body {
 
 .Title {
     position: absolute;
-    top: 8px;
-    right: 16px;
-    background-color: lightgreen;
+    top: 52px;
+    right: 240px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    padding: 18px;
+    background-color: rgb(248, 185, 229);
 }
 
-h1 {
+
+/* h1 {
     font-size: 36px;
     line-height: 54px;
-}
+} */
 
 h2 {
     border-bottom: 2px solid #ccc;
@@ -131,9 +135,10 @@ h2 {
 }
 
 }
-h5 {
-    display:block;
-    float: left;
+h6 {
+    float: right;
+    font-family: Impact;
+    font-stretch: extra-expanded;
     width: 85%;
     text-align: center;
     background-color: rgb(245, 166, 221);
