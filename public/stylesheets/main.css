@@ -37,12 +37,18 @@ body {
 
 .Title {
     position: absolute;
-    top: 52px;
-    right: 240px;
+    top: 16px;
+    left: 240px;
     /* padding-left: 10px;
     padding-right: 10px; */
-    padding: 18px;
-    background-color: rgb(248, 185, 229);
+    /* padding: 18px; */
+    /* background-color: rgb(248, 185, 229); */
+}
+
+.logo {
+    position: absolute;
+    top: 26px;
+    left: 1080px;
 }
 
 
