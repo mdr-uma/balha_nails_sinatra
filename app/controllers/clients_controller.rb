@@ -30,23 +30,20 @@ class ClientsController < ApplicationController
     post '/login' do
     client = Client.find_by(email: params[:email])
         if client && client.authenticate(params[:password])
-        session[:client_id] = client.id
-        redirect '/appointments'
+            session[:client_id] = client.id
+            redirect '/appointments'
         else
-        redirect '/login'
+            redirect '/login'
         end
-
     end
 
     get '/logout' do
         if logged_in?
-        session.clear
-        redirect '/'
+            session.clear
+            redirect '/'
         else !logged_in?
-        redirect '/login'
+            redirect '/login'
         end
-  end
-
-
+    end
 
 end
