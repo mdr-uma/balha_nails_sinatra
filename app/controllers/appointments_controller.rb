@@ -38,13 +38,8 @@ class AppointmentsController < ApplicationController
         if !logged_in?
             redirect '/login'
         end
-            @appointment = Appointment.find_by(id: params[:id])
-            if @appointment.client_id != current_client.id
-                redirect '/appointments'
-            else
+            @appointment = current_client.appointments.find_by(id: params[:id])
                 erb :"/appointments/edit"
-            
-            end
     end
 
     patch '/appointments/:id' do
