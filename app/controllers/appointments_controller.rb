@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
     get '/appointments' do
         if !logged_in?
+            flash[:message] = "You must login to see your appointments."
             redirect '/login'
          elsif logged_in?
             @appointments = Appointment.all
@@ -11,7 +12,7 @@ class AppointmentsController < ApplicationController
 
     get '/appointments/new' do
         if !logged_in?
-            flash[:message] = "You must login to see your appointments."
+            flash[:message] = "You must login to create your appointments."
             redirect '/login'
         end
         erb :'appointments/new'
@@ -30,6 +31,7 @@ class AppointmentsController < ApplicationController
         end
         @appointment = Appointment.find_by(id: params[:id])
         if current_client.id != @appointment.client_id
+            flash[:message] = "You don't have access to this account."
             redirect '/appointments'
         else
             erb :"appointments/show"
@@ -41,7 +43,7 @@ class AppointmentsController < ApplicationController
             redirect '/login'
         end
             @appointment = current_client.appointments.find_by(id: params[:id])
-                erb :"/appointments/edit"
+            erb :"/appointments/edit"
     end
 
     patch '/appointments/:id' do

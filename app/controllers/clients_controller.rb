@@ -25,7 +25,6 @@ class ClientsController < ApplicationController
         if logged_in?
             redirect '/appointments'
         else
-            flash[:message] = "Invalid input, please enter valid email or password."
             erb :'/clients/login'
         end
     end
