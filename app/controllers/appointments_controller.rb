@@ -19,6 +19,7 @@ class AppointmentsController < ApplicationController
     post '/appointments' do
         client = current_client
         @appointments = Appointment.create(service_name: params[:service_name], date: params[:date], :client_id => client.id)
+        flash[:message] = "Your appointment is Successfully created."
         redirect '/appointments'
     end
     

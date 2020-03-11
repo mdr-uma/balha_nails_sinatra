@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h2>Service Name: <%= @appointment.service_name %>, Date: <%= @appointment.date %></h2>
 <a href="/appointments/<%= @appointment.id %>/edit"><input type ="submit" value ="Edit Appoinment"></a><br><br>
 
