@@ -46,12 +46,14 @@ class AppointmentsController < ApplicationController
     patch '/appointments/:id' do
          appointment = current_client.appointments.find_by(id: params[:id])
          appointment.update(service_name: params[:service_name], date: params[:date])
+         flash[:message] = "Your appointment is Successfully updated."
          redirect "/appointments" 
     end
     
     delete '/appointments/:id' do
         @appointment = current_client.appointments.find_by(id: params[:id])
         if @appointment && @appointment.destroy
+            flash[:message] = "Your appointment is Successfully deleted."
             redirect "/appointments"
         else
             redirect "/appointments/#{params[:id]}"
