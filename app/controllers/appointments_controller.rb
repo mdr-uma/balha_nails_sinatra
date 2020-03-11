@@ -11,6 +11,7 @@ class AppointmentsController < ApplicationController
 
     get '/appointments/new' do
         if !logged_in?
+            flash[:message] = "You must login to see your appointments."
             redirect '/login'
         end
         erb :'appointments/new'

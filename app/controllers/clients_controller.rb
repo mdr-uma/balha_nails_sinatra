@@ -12,8 +12,10 @@ class ClientsController < ApplicationController
     @client = Client.new(name: params[:name], phone_num: params[:phone_num], email: params[:email], password: params[:password])
         if @client.save && @client.authenticate(params[:password])
             session[:client_id] = @client.id
+            flash[:message] = "Thank you for singing up"
             redirect '/appointments'
         else
+            flash[:message] = "Invalid entry. Please enter valid name, email or password."
             redirect '/signup'
         end
     end
@@ -23,7 +25,8 @@ class ClientsController < ApplicationController
         if logged_in?
             redirect '/appointments'
         else
-        erb :'/clients/login'
+            flash[:message] = "Invalid input, please enter valid email or password."
+            erb :'/clients/login'
         end
     end
 
@@ -33,6 +36,7 @@ class ClientsController < ApplicationController
             session[:client_id] = client.id
             redirect '/appointments'
         else
+            flash[:message] = "Invalid input, please enter valid email or password."
             redirect '/login'
         end
     end
