@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
             flash[:message] = "Thank you for singing up"
             redirect '/appointments'
         else
-            flash[:message] = "Invalid entry. Please enter valid name, email or password."
+            flash[:message] = "This email is already exist, Please try a different email."
             redirect '/signup'
         end
     end
