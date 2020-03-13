@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
     get '/appointments' do
         if !logged_in?
+            flash[:message] = "You must login to access your appointments."
             redirect '/login'
          elsif logged_in?
             @appointments = Appointment.all
@@ -11,6 +12,7 @@ class AppointmentsController < ApplicationController
 
     get '/appointments/new' do
         if !logged_in?
+            flash[:message] = "You must login to create your appointments."
             redirect '/login'
         end
         erb :'appointments/new'
@@ -19,6 +21,7 @@ class AppointmentsController < ApplicationController
     post '/appointments' do
         client = current_client
         @appointments = Appointment.create(service_name: params[:service_name], date: params[:date], :client_id => client.id)
+        flash[:message] = "Your appointment is Successfully created."
         redirect '/appointments'
     end
     
@@ -28,6 +31,7 @@ class AppointmentsController < ApplicationController
         end
         @appointment = Appointment.find_by(id: params[:id])
         if current_client.id != @appointment.client_id
+            flash[:message] = "You don't have access to this account."
             redirect '/appointments'
         else
             erb :"appointments/show"
@@ -38,19 +42,26 @@ class AppointmentsController < ApplicationController
         if !logged_in?
             redirect '/login'
         end
-            @appointment = current_client.appointments.find_by(id: params[:id])
+        @appointment = Appointment.find_by(id: params[:id])
+            if current_client.id != @appointment.client_id
+                flash[:message] = "You don't have access to this account."
+                redirect '/appointments'
+            else
                 erb :"/appointments/edit"
+            end
     end
 
     patch '/appointments/:id' do
          appointment = current_client.appointments.find_by(id: params[:id])
          appointment.update(service_name: params[:service_name], date: params[:date])
+         flash[:message] = "Your appointment is Successfully updated."
          redirect "/appointments" 
     end
     
     delete '/appointments/:id' do
         @appointment = current_client.appointments.find_by(id: params[:id])
         if @appointment && @appointment.destroy
+            flash[:message] = "Your appointment is Successfully deleted."
             redirect "/appointments"
         else
             redirect "/appointments/#{params[:id]}"
