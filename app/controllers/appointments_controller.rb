@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
     get '/appointments' do
         if !logged_in?
-            flash[:message] = "You must login to see your appointments."
+            flash[:message] = "You must login to access your appointments."
             redirect '/login'
          elsif logged_in?
             @appointments = Appointment.all
@@ -42,7 +42,6 @@ class AppointmentsController < ApplicationController
         if !logged_in?
             redirect '/login'
         end
-            # @appointment = current_client.appointments.find_by(id: params[:id])
         @appointment = Appointment.find_by(id: params[:id])
             if current_client.id != @appointment.client_id
                 flash[:message] = "You don't have access to this account."
