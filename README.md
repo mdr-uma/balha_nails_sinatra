@@ -24,7 +24,7 @@ Then open the local host in your web browser
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/'Uma'/balha_nails_sinatra. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mdr-uma/balha_nails_sinatra. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
